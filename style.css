@@ -1,0 +1,23 @@
+/* ************************
+        LOAD PAGE
+***************************/
+
+body {
+  width: 960px;
+  background-image: url("images/medellin.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main-container {
+  border: 1px solid black;
+  height: 200px;
+  margin: 100px auto;
+  color: white;
+  text-align: center;
+}
+
+button {
+  height: 100px;
+  width: 300px;
+  text-transform: uppercase;
+}

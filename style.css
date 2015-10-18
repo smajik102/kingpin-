@@ -3,34 +3,98 @@
 ***************************/
 
 body {
-  width: 960px;
-  background-image: url("images/medellin.jpg");
+  background-image: url("images/kingpin_background5.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.container{
+  width: 1024px;
+  height: 600px;
+  /*border: 1px solid black;*/
+  margin: 120px 0 0 320px;
+}
+
 .main-container {
-  border: 1px solid black;
-  display: inline-block;
-  height: 200px;
-  width: 350px;
-  margin: 250px 0;
+  /*border: 1px solid black;*/
+  display: block;
+  float: left;
+  height: 600px;
+  width: 600px;
   color: white;
-  text-align: center;
+  margin: 0 auto;
 }
 
-button {
-  display: inline-block;
-  margin: 250px 0;
-  height: 100px;
-  width: 100px;
+.button {
+  display: block;
+  float: center;
+  font-size: 14px;
+  color: white;
   text-transform: uppercase;
+
 }
 
-.results {
-  display: inline-block;
-  border: 1px solid black;
-  margin: 250px 0;
-  float: right;
-  width: 350px;
-  height: 200px;
+#choiceOne {
+  /*display: inline-block;*/
+  background-color: #404040;
+  height: 100px;
+  width: 200px;
+  border-top-right-radius: 10px;
 }
+
+#choiceOne:hover {
+  background-color: #8A0707;
+}
+
+#choiceTwo {
+  /*display: inline-block;*/
+  /*margin-bottom: 100px;*/
+  background-color: #404040;
+  height: 100px;
+  width: 200px;
+    border-bottom-right-radius: 10px;
+}
+
+#choiceTwo:hover {
+  background-color: #8A0707;
+}
+
+#pabloCard {
+  margin: 20px 0 0 35px;
+
+}
+
+#pabloCard:hover  {
+  -webkit-animation: spin 2.0s infinite linear;
+-moz-animation: spin 2.0s infinite linear;
+-o-animation: spin 2.0s infinite linear;
+-ms-animation: spin 2.0s infinite linear;
+}
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg);}
+100% { -webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes spin {
+0% { -moz-transform: rotate(0deg);}
+100% { -moz-transform: rotate(360deg);}
+}
+@-o-keyframes spin {
+0% { -o-transform: rotate(0deg);}
+100% { -o-transform: rotate(360deg);}
+}
+@-ms-keyframes spin {
+0% { -ms-transform: rotate(0deg);}
+100% { -ms-transform: rotate(360deg);}
+}
+  }
+
+/*.results {
+  border: 1px solid black;
+  display: block;
+  float: right;
+  height: 300px;
+  width: 600px;
+  margin: 0 auto;
+  color: white;
+  position: absolute;
+}*/

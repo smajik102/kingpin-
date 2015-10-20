@@ -65,10 +65,10 @@ body {
 }
 
 #pabloCard:hover  {
-  -webkit-animation: spin 2.0s infinite linear;
--moz-animation: spin 2.0s infinite linear;
--o-animation: spin 2.0s infinite linear;
--ms-animation: spin 2.0s infinite linear;
+  -webkit-animation: spin 2.5s infinite linear;
+-moz-animation: spin 2.5s infinite linear;
+-o-animation: spin 2.5s infinite linear;
+-ms-animation: spin 2.5s infinite linear;
 }
 @-webkit-keyframes spin {
 0% { -webkit-transform: rotate(0deg);}
@@ -87,14 +87,3 @@ body {
 100% { -ms-transform: rotate(360deg);}
 }
   }
-
-/*.results {
-  border: 1px solid black;
-  display: block;
-  float: right;
-  height: 300px;
-  width: 600px;
-  margin: 0 auto;
-  color: white;
-  position: absolute;
-}*/

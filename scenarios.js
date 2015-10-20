@@ -1,48 +1,49 @@
 
 //  *********** GAME VARIABLES ********************* //
+var game = "Be El Padroni";
+var playAgain = "Play Again";
+var resetGame = "Choose a different Kingpin"
+
 var pabloChoiceOne = "Give them Silver"
 var pabloChoiceTwo = "Give them Lead";
 
-var twoChoiceOne = "start hunting for ivan";
-var twoChoiceTwo = "form the group death to kidnappers";
+var twoChoiceOne = "Start Hunting Their Leader Ivan";
+var twoChoiceTwo = "Form the Group Death to Kidnappers";
 
 var threeChoiceOne = "lawyer up and file a defamation suit";
 var threeChoiceTwo = "resign and go back to being a bandito";
 
 var fourChoiceOne = "Retaliate against the Search Bloc";
-var fourChoiceTwo = "Send A Message to Pacho Herrera of Cali Cartel";
+var fourChoiceTwo = "Send A Message to Pacho Herrera of the Cali Cartel";
 
-var fiveChoiceOne = "Make an example of them";
-var fiveChoiceTwo = "Wait and see if there is more evidence";
-
-var gameOver = "Damn you got locked up - Try Again";
+var gameOver = document.createElement("IMG");
+gameOver.src = ("images/gameover.jpg");
+gameOver.width = "600";
+gameOver.height = "400";
 
 //////////////////////////////////////////////
 
-var scenarioOptionsFive = function() {
+var gameWinner = function() {
   var getScenario = document.querySelector(".main-container");
   var getButtonOne = document.getElementById("choiceOne");
   var getButtonTwo = document.getElementById("choiceTwo");
   var getResult = document.querySelector(".results");
+  var credits = document.getElementById("credits");
+  credits.play();
 
-  getScenario.innerHTML = (pabloScenarioFive);
-  getButtonOne.innerHTML = (fiveChoiceOne);
-  getButtonTwo.innerHTML = (fiveChoiceTwo);
+  getScenario.innerHTML = ("");
+  getButtonOne.innerHTML = (playAgain);
+  getButtonTwo.innerHTML = (resetGame);
+
+  var winner = document.createElement("IMG");
+  winner.src = ("images/winner.jpg");
+  winner.width = "600";
+  winner.height = "400"
+  getScenario.appendChild(winner);
 
   getButtonOne.addEventListener("click", function(){
-      getResult.innerHTML = (pabloResultFive);
-      setTimeout(function() {
-        scenarioOptionsFive();
-        getResult.innerHTML = ('');
-      },4000);
-  })
-
-  getButtonTwo.addEventListener("click", function(){
-      getResult.innerHTML = (gameOver);
-      setTimeout(function() {
-      startGame();
-      getResult.innerHTML = ('');
-    },4000);
+        getScenario.innerHTML = ("");
+        scenarioOptionsOne();
   })
 }
 
@@ -71,13 +72,13 @@ var scenarioOptionsFour = function() {
       getScenario.innerHTML = ("");
       getScenario.appendChild(pabloResultFour);
       setTimeout(function() {
-        scenarioOptionsFive();
+        gameWinner();
       },4000);
 })
 
   getButtonOne.addEventListener("click", function(){
-      getScenario.innerHTML = ("");
-      getScenario.innerHTML = (gameOver);
+    getScenario.innerHTML = ("");
+    getScenario.appendChild(gameOver);
       setTimeout(function() {
         getScenario.innerHTML = ("");
         scenarioOptionsOne();
@@ -92,47 +93,8 @@ var scenarioOptionsThree = function() {
   var getButtonTwo = document.getElementById("choiceTwo");
   var pabloResultThree = document.createElement("IMG");
   var pabloScenarioThree = document.createElement("IMG");
-
-  pabloResultThree.src = "images/ivan.jpg";
-  pabloResultThree.width = "600";
-  pabloResultThree.height = "400";
-
-  getScenario.innerHTML = ("");
-  pabloScenarioThree.src = "images/m19.jpg"
-  pabloScenarioThree.width = "600";
-  pabloScenarioThree.height = "400";
-  getScenario.appendChild(pabloScenarioThree);
-
-
-  getButtonOne.innerHTML = (fourChoiceOne);
-  getButtonTwo.innerHTML = (fourChoiceTwo);
-
-  getButtonOne.addEventListener("click", function(){
-      getScenario.innerHTML = ("");
-      getScenario.appendChild(pabloResultFour);
-      setTimeout(function() {
-        scenarioOptionsFour();
-      },4000);
-})
-
-  getButtonTwo.addEventListener("click", function(){
-      getScenario.innerHTML = ("");
-      getScenario.innerHTML = (gameOver);
-      setTimeout(function() {
-        getScenario.innerHTML = ("");
-        scenarioOptionsOne();
-    },4000);
-  })
-
-}
-
-
-var scenarioOptionsThree = function() {
-  var getScenario = document.querySelector(".main-container");
-  var getButtonOne = document.getElementById("choiceOne");
-  var getButtonTwo = document.getElementById("choiceTwo");
-  var pabloResultThree = document.createElement("IMG");
-  var pabloScenarioThree = document.createElement("IMG");
+  var credits = document.getElementById("credits");
+  credits.pause();
 
   pabloResultThree.src = "images/pablo-revenge.jpg";
   pabloResultThree.width = "600";
@@ -157,8 +119,8 @@ var scenarioOptionsThree = function() {
 })
 
   getButtonOne.addEventListener("click", function(){
-      getScenario.innerHTML = ("");
-      getScenario.innerHTML = (gameOver);
+    getScenario.innerHTML = ("");
+    getScenario.appendChild(gameOver);
       setTimeout(function() {
         getScenario.innerHTML = ("");
         scenarioOptionsOne();
@@ -190,7 +152,7 @@ var scenarioOptionsTwo = function() {
   getButtonOne.innerHTML = (twoChoiceOne);
   getButtonTwo.innerHTML = (twoChoiceTwo);
 
-  getButtonOne.addEventListener("click", function(){
+  getButtonTwo.addEventListener("click", function(){
       getScenario.innerHTML = ("");
       getScenario.appendChild(pabloResultTwo);
       setTimeout(function() {
@@ -198,9 +160,9 @@ var scenarioOptionsTwo = function() {
       },4000);
 })
 
-  getButtonTwo.addEventListener("click", function(){
-      getScenario.innerHTML = ("");
-      getScenario.innerHTML = (gameOver);
+  getButtonOne.addEventListener("click", function(){
+    getScenario.innerHTML = ("");
+    getScenario.appendChild(gameOver);
       setTimeout(function() {
         getScenario.innerHTML = ("");
         scenarioOptionsOne();
@@ -217,6 +179,10 @@ var scenarioOptionsOne = function() {
   var getResult = document.querySelector(".results");
   var pabloResultOne = document.createElement("IMG");
   var pabloScenarioOne = document.createElement("IFRAME");
+  var bmf = document.getElementById("soundtrack");
+  bmf.pause();
+  var credits = document.getElementById("credits");
+  credits.pause();
 
   pabloResultOne.src = "images/soah8.gif";
   pabloResultOne.width = "600";
@@ -241,7 +207,7 @@ var scenarioOptionsOne = function() {
 
   getButtonTwo.addEventListener("click", function(){
       getScenario.innerHTML = ("");
-      getScenario.innerHTML = (gameOver);
+      getScenario.appendChild(gameOver);
       setTimeout(function() {
         getScenario.innerHTML = ("");
         scenarioOptionsOne();
@@ -250,10 +216,32 @@ var scenarioOptionsOne = function() {
 
 }
 
-// var startGame = function(){
-  scenarioOptionsOne();
-// //
-// var bmf = document.getElementById("soundtrack");
-// bmf.play();
-// }
-// startGame();
+var startGame = function() {
+  var getScenario = document.querySelector(".main-container");
+  var getButtonOne = document.getElementById("choiceOne");
+  var getButtonTwo = document.getElementById("choiceTwo");
+  var pabloCard = document.createElement("IMG");
+  var credits = document.getElementById("credits");
+  credits.pause();
+  var bmf = document.getElementById("soundtrack");
+  bmf.play();
+
+  pabloCard.src = "images/escobar.png";
+  pabloCard.width = "400";
+  pabloCard.height = "400";
+  pabloCard.style.margin = "0 0 0 100px";
+  pabloCard.setAttribute("id", "pabloCard");
+  getScenario.appendChild(pabloCard);
+
+
+  getButtonOne.innerHTML = (game);
+  getButtonTwo.innerHTML = (resetGame);
+
+  getButtonOne.addEventListener("click", function(){
+      getScenario.innerHTML = ("");
+        scenarioOptionsOne();
+})
+
+}
+
+startGame();
